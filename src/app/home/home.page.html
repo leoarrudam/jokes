@@ -8,7 +8,15 @@
 
 <ion-content>
   <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
+    
+    <ion-input [(ngModel)]="valorInput" placeholder="Digite"></ion-input>
+    
+    <ion-button color="dark" [disabled]="!valorInput" expand="full" (click)="showJoke()">Exibir Piada</ion-button>
+
+    <div *ngFor = "let pia of piada" > 
+      <p><b>Perguta:</b> {{pia.pergunta}}</p>
+      <p><b>Resposta:</b> {{pia.resposta}}</p> 
+
+    </div>
   </div>
 </ion-content>
